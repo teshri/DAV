@@ -1,0 +1,84 @@
+def list_of_dict(heights):
+    keys=heights.keys()
+    # print(keys)
+    values = zip(*[heights[k] for k in keys])
+    # print(values)
+    result = [dict(zip(keys,v )) for v in values]
+    return result
+
+heights = {'Boys':[72,68,70,69,74], 'Girls':[63,65,69,62,61]}
+print("\n ORIGINAL DICTIONARY OF LISTS :" , heights)
+print("\n NOW LIST OF DICTIONARIES : \n",list_of_dict(heights))
+
+
+Question 2
+part a
+#part a
+arr = np.random.randint(1,50,(4,6))
+arr
+
+
+#along the second axis
+#Mean
+print('Mean of the array: ',arr.mean(axis=1))
+#standard deviation
+print('Standard Deviation of the array: ',arr.std(axis=1))
+#variance
+print('Variance of the array: ',arr.var(axis=1))
+
+
+
+#part b
+B = [56, 48, 22, 41, 78, 91, 24, 46, 8, 33]
+arr1 = np.array(B)
+#arr1
+print("Sorted array: ",np.sort(arr1))
+print("Indices of the sorted elements of a given array: ",np.argsort(arr1))
+
+
+
+#part c
+m = int(input('Enter the number of rows(m): '))
+n = int(input('Enter the number of columns(n): '))
+arr2 = np.random.randint(1,100,(m,n))
+print(arr2)
+print('Shape: ',arr2.shape)
+print('Type: ',type(arr2))
+print('Data Type: ',arr2.dtype)
+arr2 = arr2.reshape(n,m)
+print('After reshaping: \n',arr2)
+print('New Shape: ',arr2.shape)
+
+
+
+#part D
+x = np.array([1, 0, 3, 4])
+print("ORIGINAL ARRAY ::-> ",x)
+print("\nTest if none of the elements of the said array is zero ::-> ", np.all(x))
+
+res = np.where(x == 0)[0]
+print("The index of the  zero elements is :: ",res)
+
+
+x = np.array([1, 0, 0, 3, 2, 0])
+print("\n")
+print("\nORIGINAL ARRAY ::-> ",x)
+print("\nTest whether any of the elements of a given array is non-zero ::",np.any(x))
+res = np.where(x != 0)[0]
+print("The index of the non- zero elements is :: ",res)
+x = np.array([0, 0, 0, 0])
+
+
+a = np.array([1, 0, np.nan, 3, np.nan])
+print("\n")
+print("\nORIGINAL ARRAY ::-> ",a)
+print("\nTest element-wise for NaN :: ",np.isnan(a))
+
+res = np.where(np.isnan(a) == True)[0]
+print("The index of the  zero elements is :: ",res)
+
+
+
+
+
+
